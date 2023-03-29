@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  test:
+    image: nvidia/cuda:10.2-base
+    volumes:
+      - .:/app
+    command: tail -F anything
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
