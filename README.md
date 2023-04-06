@@ -39,10 +39,22 @@ Fuse the outputs of these branches using concatenation or summation.
 Follow this with fully connected layers and a softmax layer for classification.
 The novelty in this architecture lies in the fusion of multi-scale features, allowing the model to learn features from different scales in a single pass.
 
+3. Novel FER Model
+Composed of 2 main layers
+
+Dynamic Receptive Field (DRF) - A novel layer that adjusts the receptive field size based on the input data.
+
+Multi-Scale Attention Module (MSAM) - A novel module that enhances the feature maps using attention mechanisms at different scale
+
 # Conclusion
 Multi-Scale Feature Fusion CNN (MSFF-CNN) may noy be an ideal architecture to this problem as it is easily overfitted in a few epochs.
 However, the problem may not caused by architecture, it could be caused by FER2013 dataset as this dataset is not large, furthur improvement can be done on fine tuning the hyperparameters and input augmentation.
 
-So as a comparison, Attention-based Emotion Region CNN (AER-CNN) is slightly more robust than the other one.
+As a comparison, Attention-based Emotion Region CNN (AER-CNN) is slightly more robust than the other one.
 
-Both model has a peak performance of 0.5 accuracy on validation set.
+The third model is the best among the three models.
+
+Third model has a peak performance of 0.59 accuracy on validation set.
+
+# Furthur work
+The third model can have a better result if training on a dataset that has better image quality, for example, a classicle image dimension for CNN would be 224 * 224, but FER2013 only has 48 * 48. The proposed three deep neural networks have too many parameters for this dataset.
